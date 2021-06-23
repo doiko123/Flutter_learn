@@ -73,10 +73,16 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: ElevatedButton(
-        onPressed: null,
-        child: Text('click here'),
-      )
+      body: Builder(
+        builder: (BuildContext context) {
+          return ElevatedButton(
+            onPressed: () {
+              Scaffold.of(context).showSnackBar(SnackBar(content: const Text("完了しました")));
+            },
+            child: Text('click here'),
+          );
+        },
+      ),
     );
   }
 }

@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: ElevatedButton(
-        onPressed: () { /* ボタンがタップされた時の処理 */ },
+        onPressed: null,
         child: Text('click here'),
       )
     );

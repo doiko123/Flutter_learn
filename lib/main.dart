@@ -73,7 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Text("HogeHoge", style: TextStyle(fontWeight: FontWeight.bold)),
+      body: ElevatedButton(
+        onPressed: () { /* ボタンがタップされた時の処理 */ },
+        child: Text('click here'),
+      )
     );
   }
 }

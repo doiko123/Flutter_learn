@@ -23,6 +23,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Doiko Home Page'),
+      routes: <String, WidgetBuilder>{
+        '/home': (BuildContext context) =>
+            new MyHomePage(title: 'Flutter Doiko Home Page'),
+        '/subpage': (BuildContext context) =>
+            new SubPage(title: 'Flutter Doiko Sub Page')
+      },
     );
   }
 }

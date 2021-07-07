@@ -82,6 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Builder(
         builder: (BuildContext context) {
           return ElevatedButton(
+            onPressed: () => Navigator.of(context).pushNamed("/subpage"),
+            child: Text('Subページへ'),
             // onPressed: () {
             //   Scaffold.of(context)
             //       .showSnackBar(SnackBar(content: const Text("ゴゴゴゴゴゴ")));

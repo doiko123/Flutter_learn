@@ -82,10 +82,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Builder(
         builder: (BuildContext context) {
           return ElevatedButton(
-            onPressed: () {
-              Scaffold.of(context).showSnackBar(SnackBar(content: const Text("完了しました")));
-            },
-            child: Text('click here'),
+            // onPressed: () {
+            //   Scaffold.of(context)
+            //       .showSnackBar(SnackBar(content: const Text("ゴゴゴゴゴゴ")));
+            // },
+            // child: Text('click here'),
           );
         },
       ),

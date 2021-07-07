@@ -79,18 +79,16 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Builder(
-        builder: (BuildContext context) {
-          return ElevatedButton(
-            onPressed: () => Navigator.of(context).pushNamed("/subpage"),
-            child: Text('Subページへ'),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => Navigator.of(context).pushNamed("/subpage"),
+          child: Text('Subページへ'),
             // onPressed: () {
             //   Scaffold.of(context)
             //       .showSnackBar(SnackBar(content: const Text("ゴゴゴゴゴゴ")));
             // },
             // child: Text('click here'),
-          );
-        },
+        )
       ),
     );
   }
@@ -118,16 +116,17 @@ class _SubPage extends State<SubPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          title: Text(widget.title),
-        ),
-        body: Builder(builder: (BuildContext context) {
-          return ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text('戻る'),
-          );
-        }));
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text('戻る'),
+        )
+      )
+    );
   }
 }

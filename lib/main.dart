@@ -22,36 +22,18 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Doiko Home Page'),
+      home: MyHomePage(),
       routes: <String, WidgetBuilder>{
         '/home': (BuildContext context) =>
-            new MyHomePage(title: 'Flutter Doiko Home Page'),
+            new MyHomePage(),
         '/subpage': (BuildContext context) =>
-            new SubPage(title: 'Flutter Doiko Sub Page')
+            new SubPage()
       },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   // int _counter = 0;
 
   // void _incrementCounter() {
@@ -77,57 +59,41 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('Flutter Doiko Home Page'),
       ),
-      body: Builder(
-        builder: (BuildContext context) {
-          return ElevatedButton(
-            onPressed: () => Navigator.of(context).pushNamed("/subpage"),
-            child: Text('Subページへ'),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => Navigator.of(context).pushNamed("/subpage"),
+          child: Text('Subページへ'),
             // onPressed: () {
             //   Scaffold.of(context)
             //       .showSnackBar(SnackBar(content: const Text("ゴゴゴゴゴゴ")));
             // },
             // child: Text('click here'),
-          );
-        },
+        )
       ),
     );
   }
 }
 
-class SubPage extends StatefulWidget {
-  SubPage({Key? key, required this.title}) : super(key: key);
+class SubPage extends StatelessWidget {
+  // SubPage({Key? key, required this.title}) : super(key: key);
+  // final String title;
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  _SubPage createState() => _SubPage();
-}
-
-class _SubPage extends State<SubPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          title: Text(widget.title),
-        ),
-        body: Builder(builder: (BuildContext context) {
-          return ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text('戻る'),
-          );
-        }));
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text('Flutter Doiko Sub Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text('戻る'),
+        )
+      )
+    );
   }
 }

@@ -38,26 +38,33 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Flutter Doiko Home Page'),
       ),
       body: Center(
-          child: ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return SubPage();
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SubPage();
+                    },
+                    fullscreenDialog: true,
+                  ),
+                );
               },
-              fullscreenDialog: true,
+              // Navigator.of(context).pushNamed("/subpage"),
+              child: const Text('Subページへ'),
+              // onPressed: () {
+              //   Scaffold.of(context)
+              //       .showSnackBar(SnackBar(content: const Text("ゴゴゴゴゴゴ")));
+              // },
+              // child: Text('click here'),
             ),
-          );
-        },
-        // Navigator.of(context).pushNamed("/subpage"),
-        child: const Text('Subページへ'),
-        // onPressed: () {
-        //   Scaffold.of(context)
-        //       .showSnackBar(SnackBar(content: const Text("ゴゴゴゴゴゴ")));
-        // },
-        // child: Text('click here'),
-      )),
+          const Text('あああ')
+          ]
+        ),
+      )
     );
   }
 }

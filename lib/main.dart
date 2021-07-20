@@ -72,6 +72,26 @@ class MyHomePage extends StatelessWidget {
             // child: Text('click here'),
         )
       ),
+          child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return SubPage();
+              },
+              fullscreenDialog: true,
+            ),
+          );
+        },
+        // Navigator.of(context).pushNamed("/subpage"),
+        child: const Text('Subページへ'),
+        // onPressed: () {
+        //   Scaffold.of(context)
+        //       .showSnackBar(SnackBar(content: const Text("ゴゴゴゴゴゴ")));
+        // },
+        // child: Text('click here'),
+      )),
     );
   }
 }

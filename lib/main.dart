@@ -23,13 +23,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  // int _counter = 0;
-
-  // void _incrementCounter() {
-  //   setState(() {
-  //     _counter++;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -38,46 +31,61 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Flutter Doiko Home Page'),
       ),
       body: Center(
-          child: ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return SubPage();
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SubPage();
+                    },
+                    fullscreenDialog: true,
+                  ),
+                );
               },
-              fullscreenDialog: true,
+              child: const Text('Subページへ'),
             ),
-          );
-        },
-        // Navigator.of(context).pushNamed("/subpage"),
-        child: const Text('Subページへ'),
-        // onPressed: () {
-        //   Scaffold.of(context)
-        //       .showSnackBar(SnackBar(content: const Text("ゴゴゴゴゴゴ")));
-        // },
-        // child: Text('click here'),
-      )),
+            const Text('あああ'),
+            const Text('いいい')
+          ]
+        ),
+      )
     );
   }
 }
 
 class SubPage extends StatelessWidget {
-  // SubPage({Key? key, required this.title}) : super(key: key);
-  // final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          title: const Text('Flutter Doiko Sub Page'),
+      appBar: AppBar(
+        title: const Text('Flutter Doiko Sub Page'),
+      ),
+      body: Container(
+        height: 400.0,
+        margin: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.pink,
+            width: 8.0,
+          ),
         ),
-        body: Center(
-            child: ElevatedButton(
-          onPressed: () => Navigator.of(context).pop(),
-          child: const Text('戻る'),
-        )));
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('戻る'),
+            ),
+            const Text('いってらっしゃい'),
+            const Text('おなかすいた')
+          ]
+        )
+      )
+    );
   }
 }

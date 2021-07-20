@@ -38,8 +38,8 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Flutter Doiko Home Page'),
       ),
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
@@ -61,7 +61,8 @@ class MyHomePage extends StatelessWidget {
               // },
               // child: Text('click here'),
             ),
-          const Text('あああ')
+            const Text('あああ'),
+            const Text('いいい')
           ]
         ),
       )

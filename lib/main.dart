@@ -70,6 +70,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
               ),
+              IconButton(
+                icon: Icon(Icons.open_in_browser),
+                  onPressed: () async {
+                    String url = Uri.encodeFull("https://doikomeshi.com");
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    }
+              }),
             ]),
       ),
       floatingActionButton: FloatingActionButton(

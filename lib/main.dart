@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,11 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
-      if (_counter % 2 == 0) {
-        _type = "偶数";
-      } else {
-        _type = "奇数";
-      }
     });
   }
 
@@ -70,17 +66,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: const Text('Subページへ'),
               ),
-              Text('$_counter', style: Theme.of(context).textTheme.headline4,),
-              if (_counter % 2 == 0)
               Text(
-                '偶数でっせ',
-                style: TextStyle(fontSize: 20, color: Colors.pink[200]),
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
               ),
-              if (_counter % 2 == 1)
-              Text(
-                '',
-                style: TextStyle(fontSize: 20, color: Colors.pink[200]),
-              )
+              IconButton(
+                icon: Icon(Icons.open_in_browser),
+                  onPressed: () async {
+                    String url = Uri.encodeFull("https://doikomeshi.com");
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    }
+              }),
             ]),
       ),
       floatingActionButton: FloatingActionButton(

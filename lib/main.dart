@@ -67,6 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: const Text('Subページへ'),
               ),
               Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
               ),
             ]),
       ),

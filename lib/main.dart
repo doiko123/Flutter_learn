@@ -71,8 +71,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: const Text('Subページへ'),
               ),
               Text('$_counter', style: Theme.of(context).textTheme.headline4,),
+              if (_counter % 2 == 0)
               Text(
-                '$_type',
+                '偶数でっせ',
+                style: TextStyle(fontSize: 20, color: Colors.pink[200]),
+              ),
+              if (_counter % 2 == 1)
+              Text(
+                '',
                 style: TextStyle(fontSize: 20, color: Colors.pink[200]),
               )
             ]),

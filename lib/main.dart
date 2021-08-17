@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '/subpage.dart';
 
 void main() {
   runApp(MyApp());
@@ -81,38 +82,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ]),
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: _incrementCounter,
-          tooltip: 'increment',
-          child: const Icon(Icons.add)),
+        onPressed: _incrementCounter,
+        tooltip: 'increment',
+        child: const Icon(Icons.add)
+      ),
     );
-  }
-}
-
-class SubPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Doiko Sub Page'),
-        ),
-        body: Container(
-            height: 400.0,
-            margin: const EdgeInsets.all(16.0),
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.pink,
-                width: 8.0,
-              ),
-            ),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  ElevatedButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    child: const Text('戻る'),
-                  ),
-                  const Text('いってらっしゃい'),
-                  const Text('おなかすいた')
-                ])));
   }
 }
